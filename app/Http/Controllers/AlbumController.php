@@ -39,7 +39,7 @@ class AlbumController extends Controller
             rename($old_dir , $images_dir.$request->name);
         }
 
-        if(Album::where('id',$album->id)->update(['name'=>$request->name,'user_id' =>Auth::id()])){
+        if(Album::where('id',$album->id)->update(['name'=>$request->name])){
             return redirect()->back()->with('success','Album has been updated Successfully');
         }
 
